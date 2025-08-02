@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd /path/to/your/repository
+
+DATE= $(date +"%Y -%m -%d")
+
+
+git add .
+
+git commit -m "Daily automated commit - $DATE"
+
+git push origin main
