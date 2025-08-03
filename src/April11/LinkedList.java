@@ -171,9 +171,43 @@ public class LinkedList <T>{    //chose any type and then follow it <T>
     }
 
 
-    @Override
+    @Override   //override toString
     public String toString(){
-        StringBuilder sb = new StringBuilder( //12:51 STOPED)
+        StringBuilder sb = new StringBuilder("[");
+        Node <T> current = head;
+
+        while (current !=null){
+            sb.append(current.data);
+            if (current.next != null){
+                sb.append(", ");  //(2,3)
+            }
+            current = current.next;
+        }
+
+        sb.append("]");
+        return sb.toString();
+    }
+
+
+    public void reverse(){
+        if (head == null || head.next == null){
+            return;
+        }
+
+        Node <T> prev = null;
+        Node <T> current = head;
+        Node <T> next = null;
+
+        tail = head;
+
+        while (current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
     }
 
 }
