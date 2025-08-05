@@ -2,6 +2,10 @@ package April18;
 
 import ds.ArrayListStack;
 
+import javax.security.auth.DestroyFailedException;
+import java.util.ArrayList;
+
+/*
 class Animal{}
 class Dog extends Animal {}
 //extends = only once
@@ -86,6 +90,7 @@ public class Circle extends Shape{
 Circle cir =  new Circle();
 cir draw(); //вызовется shape and drawing
 
+ */
 public class ArrayListExample<E> {
     private static final int DEFAULT_CAPACITY =10;
     private static final Object[] EMPTY_ELEMENTDATA ={};
@@ -94,8 +99,17 @@ public class ArrayListExample<E> {
     private int size;
 
     public ArrayListExample(){
+
         this.elementData=EMPTY_ELEMENTDATA;
     }
+
+    }
+//    @Override
+//    String toString(){
+//        return "Java array list";
+
+   ArrayList arrlist = new ArrayList();
+
 
     public ArrayListExample(int initialCapacity){
         if(initialCapacity > 0) {
@@ -106,4 +120,107 @@ public class ArrayListExample<E> {
             throw new IllegalArgumentException("Illegal Capacity")
         }
     }
-}(20:45 min)
+}
+
+    public boolean add(E e) {   //line33
+        ensureCapacityInternal(size +1);elementData
+        elementData[size++] = e;
+        return true;
+    }
+
+    public void add(int index,E element) { //39
+    rangeCheckForAdd(index);
+    ensureCapacityInternal(size +1);
+    System.arraycopy((elementData,index,elementData, index+1,size - index);
+    [index] = element;
+    size++;
+    }
+    public boolean remove (Object  o) {
+        if (0 == null) {
+            for (int index = 0; index <size ; index++)
+                if(elementData[index] == null){
+                    fastRemove(index);
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    private void fastRemove(int index) {
+    int numMoved = size - index -1;
+    if(numMoved >0)
+        System.arraycopy(elementData, index + 1,elementData, index,numMoved);
+    elemenentData[--size] = null;
+    }
+
+    public void clear() {
+        for (int i = 0; i< size; i++)
+            elementData[i] = null;
+        size = 0;
+    } //line 72
+
+    public boolean isEmpty(){
+    return size ==0;
+    }
+
+    public int size(){
+        return size;
+    }
+
+    private void ensureCapacityInternal(int minCapacity){
+        if (elementData ==EMPTY_ELEMENTDATA) {
+            minCapacity = Math.max(DEDAULT_CAPACITY,minCapacity);
+        }
+
+        if(minCapacity - elementData.length>0)
+            grow(minCapacity);
+    }
+
+    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE -8;
+
+    private void grow(int minCapacity) {
+        int oldCapacity = elementData.length;
+        int newCapacity = oldCapacity + (oldCapacity >> 1);
+        if (newCapacity - minCapacity <0 )
+            newCapacity = minCapacity;
+        if (newCapacity - MAX_ARRAY_SIZE)? Integer.MAX_VALUE : MAX_ARRAY_SIZE;
+    }
+
+    private void rangeCheck(int index) {
+        if(index >=size)
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+    } //line 133
+
+    private void rangeCheckForAdd (int index) {
+        if (index > size || index <0)
+            throw new IndexOutOfBoundsException((outOfBoundsMsg(index));
+    }
+    private String outOfBoundsMsg(int index) {
+        return "Index: " + index + ", Size:" + size;
+    }
+} //line 122
+
+    @SuppressWarnings("unchecked")
+    public E set get(int index){
+        rangeCheck(index);
+        return (E) elementData [index];
+    }
+
+    @SuppressWarnings("unchecked")
+    public E set(int index,E element) { //E or T =generic
+        rangeCheck(index);
+        E oldvalue = (E) elementData[index];
+        elementData[index] = element;
+        return oldValue;
+    }
+
+    @SuppressWarnings("unchecked")
+    public E remove(int index) {
+    rangeCheck(index);
+    E oldValue = [E] elementData[index];
+    int numMoved = size - index -1;
+    if (numMoved>0)
+        System.arraycopy(elementData,index +1,elementData,index,numMoved);
+    elementData[--size] = null; //line
+
+    }
