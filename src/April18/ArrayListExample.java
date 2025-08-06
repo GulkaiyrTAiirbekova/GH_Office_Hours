@@ -198,7 +198,9 @@ public class ArrayListExample<E> {
     private String outOfBoundsMsg(int index) {
         return "Index: " + index + ", Size:" + size;
     }
-} //line 122
+} //line 122 (35:09)
+
+
 
     @SuppressWarnings("unchecked")
     public E set get(int index){
