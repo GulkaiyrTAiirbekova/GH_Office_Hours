@@ -1,0 +1,15 @@
+1.Payment System(Interface)
+
+Requirements:
+* Create an Interface Payable:
+    void pay(double amount):
+
+* Implement two Classes:
+    *CreditCardPayment
+    *CashPayment
+* Each should print a custom message in pay() indicating how the payment is processed.
+
+BONUS:
+* While a method that takes a Payable[] and changes each one a random amount between $1-100.
+* Demonstrate how the same method can call pay() on all types using polymorphism.
+* Add refund(double amount) method to the interface.Think about how CreditCardPayment and CashPayment would behave differently.
