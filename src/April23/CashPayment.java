@@ -1,6 +1,6 @@
 package April23;
 
-public class CashPayment  implements Payable{
+public class CashPayment  implements Payable{ //whenever "implements" must have @Override
     @Override
     public void pay(double amount) {
         System.out.println("Accepting cash payment of $%.2f\n", amount);
