@@ -1,4 +1,4 @@
-package April23;
+package April23.payable;
 
 public interface Payable {
     void pay(double amount);

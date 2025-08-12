@@ -1,4 +1,4 @@
-package April23;
+package April23.payable;
 import chess.*;
 import chess.game.ChessboardCall;
 import chess.game.ChessBoardEmptyPiece;
@@ -8,8 +8,6 @@ import printing.*;
 import vehicle.Bicycle;
 import vehicle.Train;
 import vehicle.TransportVehicle;
-
-import java.util.Random;
 
 
 public class Main {
