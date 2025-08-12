@@ -1,4 +1,4 @@
-package April23;
+package April23.payable;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class PaymentProcessor {
  */
 public class PaymentProcessor {
 
-    public static void processPayments(Payable [] payments) {
+    public static void processPayments(Payable[] payments) {
         Random rand = new Random();
 
         for (Payable payment : payments) {

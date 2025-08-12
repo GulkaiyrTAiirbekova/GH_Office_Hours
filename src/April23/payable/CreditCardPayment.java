@@ -1,6 +1,6 @@
-package April23;
+package April23.payable;
 
-public class CreditCardPayment  implements Payable{
+public class CreditCardPayment  implements Payable {
     private String cardNumber;
     private String cardHolderName;
 
