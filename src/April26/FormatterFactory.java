@@ -3,23 +3,15 @@ package April26;
 public class FormatterFactory {
 
     public static Formatter getFormatter(String name) {
-        switch (name) {
-            case"UpperCaseFormatter":
-                return new UpperCaseFormatter();
-            case "LowerCaseFormatter":
-                return new LowerCaseFormatter();
-            case "DashFormatter":
-                return new DashFormatter();
-            case "ReverseFormatter"":
-                    return new ReverseFormatter();
-            case "CamelCaseFormatter"":
-                    return new CamelCaseFormatter();
-
-            default:
-                throw new IllegalArgumentException("Unkown fomatter: " name);
-            //14:34
-
-        }
+        //14:34
+        return switch (name) {
+            case "UpperCaseFormatter" -> new UpperCaseFormatter();
+            case "LowerCaseFormatter" -> new LowerCaseFormatter();
+            case "DashFormatter" -> new DashFormatter();
+            case "ReverseFormatter" ->  new ReverseFormatter();
+            case "CamelCaseFormatter" -> new CamelCaseFormatter();
+            default -> throw new IllegalArgumentException("Unkown fomatter: " + name);
+        };
     }
     // Method to apply multiple formatter in sequence(Bonus)
 
@@ -32,3 +24,5 @@ public class FormatterFactory {
     }
 
 }
+
+
