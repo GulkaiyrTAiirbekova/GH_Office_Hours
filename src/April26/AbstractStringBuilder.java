@@ -17,3 +17,6 @@ public class AbstractStringBuilder  reverse() {
     }
     return this;
 }
+
+public void main() {
+}
