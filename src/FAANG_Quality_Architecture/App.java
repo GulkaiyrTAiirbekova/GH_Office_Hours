@@ -31,8 +31,5 @@ public class App {
         manager.submit(shipping);
 
         managerLaser.submit(shipping);//test LaserPrinter
-
-
-
     }
 }
